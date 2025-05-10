@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Selamat Ulang Tahun Istimewa</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #111;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* Intro Section */
+        #intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            z-index: 10;
+            background-color: #111;
+            transition: opacity 1s ease-out;
+        }
+        
+        .envelope {
+            width: 200px;
+            height: 120px;
+            background-color: #ff4d6d;
+            border-radius: 10px;
+            position: relative;
+            margin-bottom: 30px;
+            cursor: pointer;
+            perspective: 1000px;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .envelope-flap {
+            position: absolute;
+            width: 100%;
+            height: 80px;
+            background-color: #ff758f;
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+            transform-origin: top;
+            transition: transform 0.6s ease-out;
+            z-index: 2;
+        }
+        
+        .envelope:hover .envelope-flap {
+            transform: rotateX(180deg);
+        }
+        
+        .envelope-letter {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            right: 20px;
+            height: 100px;
+            background-color: white;
+            border-radius: 5px;
+            z-index: 1;
+            color: #ff4d6d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.4s ease-out 0.3s;
+        }
+        
+        .envelope:hover .envelope-letter {
+            transform: translateY(-40px);
+        }
+        
+        #intro-text {
+            font-size: 24px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        /* Main Content */
+        #main-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .cake-container {
+            position: fixed;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cake {
+            position: relative;
+            width: 180px;
+            height: 140px;
+        }
+        
+        .cake-bottom {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 70px;
+            background-color: #ffc2d1;
+            border-radius: 10px;
+        }
+        
+        .cake-middle {
+            position: absolute;
+            bottom: 70px;
+            width: 90%;
+            height: 50px;
+            left: 5%;
+            background-color: #ffb3c6;
+            border-radius: 10px;
+        }
+        
+        .cake-top {
+            position: absolute;
+            bottom: 120px;
+            width: 80%;
+            height: 40px;
+            left: 10%;
+            background-color: #ff8fab;
+            border-radius: 10px;
+        }
+        
+        .candle {
+            position: absolute;
+            bottom: 160px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 35px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        
+        .flame {
+            position: absolute;
+            bottom: 195px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 25px;
+            background-color: #ffaa00;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: 0 0 20px #ffaa00, 0 0 60px #ffaa00;
+            animation: flicker 1s ease-in-out infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+            50% { transform: translateX(-50%) scale(0.9); opacity: 0.8; }
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ffcc00;
+        }
+        
+        .decoration:nth-child(1) { bottom: 10px; left: 20px; background-color: #ffcc00; }
+        .decoration:nth-child(2) { bottom: 30px; left: 50px; background-color: #ff6b6b; }
+        .decoration:nth-child(3) { bottom: 50px; left: 80px; background-color: #65d6ce; }
+        .decoration:nth-child(4) { bottom: 25px; left: 140px; background-color: #ff6b6b; }
+        .decoration:nth-child(5) { bottom: 45px; left: 110px; background-color: #ffcc00; }
+        
+        .header {
+            position: relative;
+            margin-top: 50px;
+            text-align: center;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            color: #ff4d6d;
+            text-shadow: 0 0 10px rgba(255, 77, 109, 0.7);
+            animation: colorChange 5s linear infinite;
+        }
+        
+        @keyframes colorChange {
+            0% { color: #ff4d6d; }
+            25% { color: #ffaa00; }
+            50% { color: #65d6ce; }
+            75% { color: #bf5fff; }
+            100% { color: #ff4d6d; }
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .photo-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+            perspective: 1000px;
+        }
+        
+        .photo-cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotateY(0deg) rotateX(0deg); }
+            100% { transform: rotateY(360deg) rotateX(360deg); }
+        }
+        
+        .photo-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            backface-visibility: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
+        }
+        
+        .photo-face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-face:nth-child(1) { transform: rotateY(0deg) translateZ(150px); background-color: #ff8fab; }
+        .photo-face:nth-child(2) { transform: rotateY(90deg) translateZ(150px); background-color: #ffc2d1; }
+        .photo-face:nth-child(3) { transform: rotateY(180deg) translateZ(150px); background-color: #ffb3c6; }
+        .photo-face:nth-child(4) { transform: rotateY(270deg) translateZ(150px); background-color: #ff8fab; }
+        .photo-face:nth-child(5) { transform: rotateX(90deg) translateZ(150px); background-color: #ffc2d1; }
+        .photo-face:nth-child(6) { transform: rotateX(-90deg) translateZ(150px); background-color: #ffb3c6; }
+        
+        .message {
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 20px rgba(255, 77, 109, 0.3);
+        }
+        
+        .message p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .balloons-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 60px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: floatUp 15s linear infinite;
+        }
+        
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-50vh) rotate(20deg); opacity: 0.8; }
+            100% { transform: translateY(-100vh) rotate(-20deg); opacity: 0; }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffcc00;
+            opacity: 0;
+        }
+        
+        @keyframes confettiFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 77, 109, 0.6);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .music-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+        }
+        
+        .music-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(255, 77, 109, 0.5);
+        }
+        
+        .wish-btn {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Star Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.2; }
+        }
+        
+        /* Gift Section */
+        .gift-section {
+            display: none;
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .gift {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+            animation: giftBounce 2s infinite alternate;
+        }
+        
+        @keyframes giftBounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+        
+        .gift-box {
+            position: absolute;
+            width: 100%;
+            height: 80%;
+            bottom: 0;
+            background-color: #ff4d6d;
+            border-radius: 5px;
+        }
+        
+        .gift-lid {
+            position: absolute;
+            width: 110%;
+            height: 30%;
+            left: -5%;
+            top: -10%;
+            background-color: #ff758f;
+            border-radius: 5px;
+            transition: transform 0.5s;
+        }
+        
+        .gift:hover .gift-lid {
+            transform: translateY(-20px) rotateX(60deg);
+        }
+        
+        .gift-ribbon {
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            left: 40%;
+            background-color: #ff8fab;
+        }
+        
+        .gift-ribbon-horizontal {
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            top: 40%;
+            background-color: #ff8fab;
+        }
+        
+        .gift-bow {
+            position: absolute;
+            width: 60%;
+            height: 40%;
+            left: 20%;
+            top: -20%;
+            z-index: 1;
+        }
+        
+        .gift-bow:before, .gift-bow:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background-color: #ff758f;
+            border-radius: 50% 50% 0 0;
+        }
+        
+        .gift-bow:before {
+            left: 0;
+            transform-origin: right bottom;
+            transform: rotate(-40deg);
+        }
+        
+        .gift-bow:after {
+            right: 0;
+            transform-origin: left bottom;
+            transform: rotate(40deg);
+        }
+        
+        /* Surprise Section */
+        .surprise {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        
+        .surprise-content {
+            max-width: 80%;
+            text-align: center;
+        }
+        
+        .surprise h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #ff4d6d;
+            margin-bottom: 20px;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        @keyframes firework {
+            0% { transform: translate(0, 0); opacity: 1; width: 5px; height: 5px; }
+            50% { opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)); opacity: 0; width: 0; height: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Intro Section -->
+    <div id="intro">
+        <div class="envelope" id="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-letter">Klik untuk membuka</div>
+        </div>
+        <div id="intro-text">Ada pesan spesial untukmu!</div>
+    </div>
+    
+    <!-- Main Content -->
+    <div id="main-content" class="hidden">
+        <!-- Star Background -->
+        <div class="stars" id="stars"></div>
+        
+        <!-- Balloons Container -->
+        <div class="balloons-container" id="balloons-container"></div>
+        
+        <!-- Header -->
+        <div class="container">
+            <div class="header">
+                <h1>Selamat Ulang Tahun!</h1>
+                <p class="subtitle">Hari yang spesial untuk orang yang spesial</p>
+                <button class="btn wish-btn" id="wish-btn">Make A Wish!</button>
+            </div>
+            
+            <!-- Photo Cube -->
+            <div class="photo-container">
+                <div class="photo-cube">
+                    <div class="photo-face">
+                        <img src="foto/IMG-20240731-WA0061.jpg" alt="Photo 1">
+                    </div>
+                    <div class="photo-face">
+                        <img src="foto/212.jpg" alt="Photo 2">
+                    </div>
+                    <div class="photo-face">
+                        <img src="foto/IMG-20240804-WA0039.jpg" alt="Photo 3">
+                    </div>
+                    <div class="photo-face">
+                        <img src="foto/IMG-20240908-WA0008.jpg" alt="Photo 4">
+                    </div>
+                    <div class="photo-face">
+                        <img src="foto/IMG-20240908-WA0031.jpg" alt="Photo 5">
+                    </div>
+                    <div class="photo-face">
+                        <img src="foto/IMG-20250126-WA0010.jpg" alt="Photo 6">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Message -->
+            <div class="message">
+                <p>ALOW SENGGG!!!!!</p>
+                <p>Semoga tahun ini membawa lebih banyak senyuman, keberhasilan, dan momen-momen indah yang tak terlupakan.</p>
+                <p>Terima kasih telah menjadi pribadi yang luar biasa dan memberikan warna dalam kehidupan orang-orang di sekitarmu.</p>
+            </div>
+            
+            <!-- Gift Section -->
+            <div class="gift-section" id="gift-section">
+                <h2>Ada kejutan untukmu!</h2>
+                <div class="gift" id="gift">
+                    <div class="gift-box"></div>
+                    <div class="gift-lid"></div>
+                    <div class="gift-ribbon"></div>
+                    <div class="gift-ribbon-horizontal"></div>
+                    <div class="gift-bow"></div>
+                </div>
+                <p>Klik untuk membuka hadiah!</p>
+            </div>
+            
+            <!-- Cake Animation -->
+            <div class="cake-container">
+                <div class="cake">
+                    <div class="flame" id="flame"></div>
+                    <div class="candle"></div>
+                    <div class="cake-top"></div>
+                    <div class="cake-middle"></div>
+                    <div class="cake-bottom">
+                        <div class="decoration"></div>
+                        <div class="decoration"></div>
+                        <div class="decoration"></div>
+                        <div class="decoration"></div>
+                        <div class="decoration"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Music Controls -->
+            <div class="music-controls">
+                <button class="music-btn" id="music-toggle">♫</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Surprise Modal -->
+    <div class="surprise" id="surprise">
+        <div class="surprise-content">
+            <h2>Kejutan Spesial!</h2>
+            <p>Hai Wanita Hebat, Selamat Ulang Tahun ya.</p>
+            <p>Semoga kebahagiaan selalu menyertaimu, dan semua harapanmu terkabul di tahun baru kehidupanmu ini.</p>
+            <div id="fireworks-container"></div>
+            <button class="btn" id="close-surprise">Tutup</button>
+        </div>
+    </div>
+    
+    <!-- Audio -->
+    <audio id="birthday-song" loop>
+        <source src="foto/nina - .feast reverb TikTok Version lyrics lyrics4mood shorts.mp3" type="audio/mpeg">
+        Maaf, browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        // DOM Elements
+        const intro = document.getElementById('intro');
+        const mainContent = document.getElementById('main-content');
+        const envelope = document.getElementById('envelope');
+        const birthdaySong = document.getElementById('birthday-song');
+        const musicToggle = document.getElementById('music-toggle');
+        const starsContainer = document.getElementById('stars');
+        const balloonsContainer = document.getElementById('balloons-container');
+        const giftSection = document.getElementById('gift-section');
+        const gift = document.getElementById('gift');
+        const surprise = document.getElementById('surprise');
+        const closeSupriseBtn = document.getElementById('close-surprise');
+        const wishBtn = document.getElementById('wish-btn');
+        const flame = document.getElementById('flame');
+        
+        // Create stars
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            starsContainer.appendChild(star);
+        }
+        
+        // Create balloons
+        const colors = ['#ff4d6d', '#ff8fab', '#ffb3c6', '#ffc2d1', '#65d6ce', '#ffaa00', '#bf5fff'];
+        for (let i = 0; i < 30; i++) {
+            const balloon = document.createElement('div');
+            balloon.classList.add('balloon');
+            balloon.style.left = `${Math.random() * 100}%`;
+            balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.width = `${30 + Math.random() * 20}px`;
+            balloon.style.height = `${50 + Math.random() * 30}px`;
+            balloon.style.animationDuration = `${10 + Math.random() * 10}s`;
+            balloon.style.animationDelay = `${Math.random() * 5}s`;
+            balloonsContainer.appendChild(balloon);
+        }
+        
+        // Audio controls
+        let isPlaying = false;
+        
+        musicToggle.addEventListener('click', function() {
+            if (isPlaying) {
+                birthdaySong.pause();
+                musicToggle.innerHTML = '♫';
+            } else {
+                birthdaySong.play();
+                musicToggle.innerHTML = '◼';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        // Open envelope
+        envelope.addEventListener('click', function() {
+            intro.style.opacity = '0';
+            setTimeout(function() {
+                intro.style.display = 'none';
+                mainContent.classList.remove('hidden');
+                
+                // Show gift section after delay
+                setTimeout(function() {
+                    giftSection.style.display = 'block';
+                }, 5000);
+                
+                // Try to play music (may fail due to autoplay restrictions)
+                try {
+                    birthdaySong.play();
+                    isPlaying = true;
+                    musicToggle.innerHTML = '◼';
+                } catch (e) {
+                    console.log('Autoplay prevented. User needs to interact with the page first.');
+                }
+            }, 1000);
+        });
+        
+        // Gift click
+        gift.addEventListener('click', function() {
+            // Create confetti
+            for (let i = 0; i < 100; i++) {
+                createConfetti();
+            }
+            
+            // Show surprise
+            setTimeout(function() {
+                surprise.style.display = 'flex';
+                setTimeout(() => {
+                    surprise.style.opacity = '1';
+                    
+                    // Create fireworks
+                    for (let i = 0; i < 30; i++) {
+                        setTimeout(() => {
+                            createFirework();
+                        }, i * 300);
+                    }
+                }, 50);
+            }, 1000);
+        });
+        
+        // Close surprise
+        closeSupriseBtn.addEventListener('click', function() {
+            surprise.style.opacity = '0';
+            setTimeout(() => {
+                surprise.style.display = 'none';
+            }, 500);
+        });
+        
+        // Make a wish
+        wishBtn.addEventListener('click', function() {
+            // Blow out candle
+            flame.style.opacity = '0';
+            
+            // Create confetti
+            for (let i = 0; i < 50; i++) {
+                createConfetti();
+            }
+            
+            // Show message
+            setTimeout(() => {
+                alert('Semoga semua harapanmu menjadi kenyataan!');
+                
+                // Relight candle
+                setTimeout(() => {
+                    flame.style.opacity = '1';
+                }, 2000);
+            }, 500);
+        });
+        
+        // Create confetti function
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.left = `${Math.random() * 100}%`;
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.opacity = '1';
+            confetti.style.animation = `confettiFall ${3 + Math.random() * 3}s linear forwards`;
+            document.body.appendChild(confetti);
+            
+            // Remove confetti after animation
+            setTimeout(() => {
+                document.body.removeChild(confetti);
+            }, 6000);
+        }
+        
+        // Create firework function
+        function createFirework() {
+            const fireworksContainer = document.getElementById('fireworks-container');
+            const x = Math.random() * 80 + 10; // 10% to 90% of container width
+            const y = Math.random() * 80 + 10; // 10% to 90% of container height
+            
+            const firework = document.createElement('div');
+            firework.classList.add('firework');
+            firework.style.left = `${x}%`;
+            firework.style.top = `${y}%`;
+            firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            fireworksContainer.appendChild(firework);
+            
+            // Create particles
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('firework');
+                particle.style.left = `${x}%`;
+                particle.style.top = `${y}%`;
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 20 + 5;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                
+                particle.style.setProperty('--tx', `${tx}vw`);
+                particle.style.setProperty('--ty', `${ty}vh`);
+                particle.style.animation = `firework 1s ease-out forwards`;
+                
+                fireworksContainer.appendChild(particle);
+                
+                // Remove particle after animation
+                setTimeout(() => {
+                    fireworksContainer.removeChild(particle);
+                }, 1000);
+            }
+            
+            // Remove firework
+            setTimeout(() => {
+                fireworksContainer.removeChild(firework);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
